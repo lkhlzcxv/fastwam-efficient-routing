@@ -1,0 +1,544 @@
+{
+  "schema_version": 1,
+  "purpose": "Public, sanitized aggregate results from archived experiments; no new experiment executions.",
+  "timing_definition": "Mean CPU observation to CPU executable action (infer_ms) and GPU action-denoising loop (denoise_ms), measured separately from parallel rollouts with compilation/warmup excluded.",
+  "aggregation_note": "Forty-task and Task4 overall latencies are means across completed task groups; Plus latencies remain separated by suite. Never combine baselines across runs.",
+  "runs": [
+    {
+      "id": "fixed_structure_40",
+      "title": "Fixed shallow structures on 40 LIBERO tasks",
+      "kind": "closed_loop_and_timing",
+      "scope": {
+        "benchmark": "LIBERO",
+        "suites": [
+          "libero_spatial",
+          "libero_object",
+          "libero_goal",
+          "libero_10"
+        ],
+        "task_count": 40,
+        "initial_states_per_task": 10,
+        "evaluation_seed_count": 1
+      },
+      "counts": {
+        "episodes": 1200,
+        "new_episodes": 1140,
+        "reused_episodes": 60,
+        "timing_calls": 12000
+      },
+      "policies": [
+        {
+          "mode": "full",
+          "successes": 386,
+          "episodes": 400,
+          "success_rate": 0.965,
+          "infer_ms": 128.94038535675,
+          "denoise_ms": 56.25736421585084,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 98,
+              "episodes": 100
+            },
+            "libero_object": {
+              "successes": 100,
+              "episodes": 100
+            },
+            "libero_goal": {
+              "successes": 95,
+              "episodes": 100
+            },
+            "libero_10": {
+              "successes": 93,
+              "episodes": 100
+            }
+          }
+        },
+        {
+          "mode": "fork2_b0",
+          "successes": 388,
+          "episodes": 400,
+          "success_rate": 0.97,
+          "infer_ms": 97.93580456225,
+          "denoise_ms": 25.244936399936677,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 98,
+              "episodes": 100
+            },
+            "libero_object": {
+              "successes": 100,
+              "episodes": 100
+            },
+            "libero_goal": {
+              "successes": 97,
+              "episodes": 100
+            },
+            "libero_10": {
+              "successes": 93,
+              "episodes": 100
+            }
+          }
+        },
+        {
+          "mode": "fork3_b0",
+          "successes": 385,
+          "episodes": 400,
+          "success_rate": 0.9625,
+          "infer_ms": 98.46516840199999,
+          "denoise_ms": 26.397947844505314,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 98,
+              "episodes": 100
+            },
+            "libero_object": {
+              "successes": 98,
+              "episodes": 100
+            },
+            "libero_goal": {
+              "successes": 94,
+              "episodes": 100
+            },
+            "libero_10": {
+              "successes": 95,
+              "episodes": 100
+            }
+          }
+        }
+      ],
+      "reported_audits": {
+        "final_audit_passed": true
+      },
+      "source_ids": [
+        "fixed40",
+        "fixed40_audit"
+      ],
+      "limitations": [
+        "One evaluation seed and one adapter training initialization; ten initial states per task.",
+        "Sixty scored episodes were reused from earlier task0 evaluations; they are not fresh executions in this run.",
+        "Observed success differences do not establish non-inferiority, equivalence, or statistically reliable improvements.",
+        "The Full baseline belongs to this run and must not be substituted into another run.",
+        "Only three frozen candidate policies were evaluated on all 40 tasks."
+      ]
+    },
+    {
+      "id": "dynamic_routing_40",
+      "title": "Full, fixed schedule, and dynamic MLP on 40 LIBERO tasks",
+      "kind": "closed_loop_and_timing",
+      "scope": {
+        "benchmark": "LIBERO",
+        "suites": [
+          "libero_spatial",
+          "libero_object",
+          "libero_goal",
+          "libero_10"
+        ],
+        "task_count": 40,
+        "initial_states_per_task": 10,
+        "evaluation_seed_count": 1
+      },
+      "counts": {
+        "episodes": 1200,
+        "new_episodes": 900,
+        "reused_episodes": 300,
+        "timing_calls": 12000
+      },
+      "policies": [
+        {
+          "mode": "full",
+          "successes": 391,
+          "episodes": 400,
+          "success_rate": 0.9775,
+          "infer_ms": 122.86601633175003,
+          "denoise_ms": 55.982811408996575,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 100,
+              "episodes": 100
+            },
+            "libero_object": {
+              "successes": 100,
+              "episodes": 100
+            },
+            "libero_goal": {
+              "successes": 97,
+              "episodes": 100
+            },
+            "libero_10": {
+              "successes": 94,
+              "episodes": 100
+            }
+          },
+          "closed_loop_shallow_ratio": 0.0
+        },
+        {
+          "mode": "fixed4",
+          "successes": 387,
+          "episodes": 400,
+          "success_rate": 0.9675,
+          "infer_ms": 96.48450578724997,
+          "denoise_ms": 28.416965897560118,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 98,
+              "episodes": 100
+            },
+            "libero_object": {
+              "successes": 99,
+              "episodes": 100
+            },
+            "libero_goal": {
+              "successes": 96,
+              "episodes": 100
+            },
+            "libero_10": {
+              "successes": 94,
+              "episodes": 100
+            }
+          },
+          "closed_loop_shallow_ratio": 0.6
+        },
+        {
+          "mode": "mlp",
+          "successes": 387,
+          "episodes": 400,
+          "success_rate": 0.9675,
+          "infer_ms": 94.78907625000001,
+          "denoise_ms": 27.778088205814363,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 98,
+              "episodes": 100
+            },
+            "libero_object": {
+              "successes": 100,
+              "episodes": 100
+            },
+            "libero_goal": {
+              "successes": 96,
+              "episodes": 100
+            },
+            "libero_10": {
+              "successes": 93,
+              "episodes": 100
+            }
+          },
+          "closed_loop_shallow_ratio": 0.6637268626536009
+        }
+      ],
+      "reported_audits": {
+        "final_audit_passed": true
+      },
+      "source_ids": [
+        "dynamic40",
+        "dynamic40_audit"
+      ],
+      "limitations": [
+        "Three hundred scored episodes were reused from the section6 study; nine hundred were newly executed.",
+        "One evaluation seed and ten initial states per task; no equivalence or global optimality claim.",
+        "The MLP and fixed schedule use different actual shallow ratios, so this is not an equal-compute content-benefit comparison.",
+        "The dynamic MLP has four fewer observed successes than this run's Full baseline (one percentage point).",
+        "This historical MLP checkpoint is distinct from the later Task4 input-ablation predictors. The public Task4 router module is not an exact implementation of this run."
+      ]
+    },
+    {
+      "id": "task4_input_ablation",
+      "title": "Content, timestep, meta, and random input ablations",
+      "kind": "closed_loop_and_timing",
+      "scope": {
+        "benchmark": "LIBERO",
+        "suites": [
+          "libero_spatial",
+          "libero_goal"
+        ],
+        "task_count": 2,
+        "task_indices": [
+          0
+        ],
+        "initial_states_per_task": 50,
+        "evaluation_seed_count": 1
+      },
+      "counts": {
+        "episodes": 700,
+        "new_episodes": 700,
+        "reused_episodes": 0,
+        "timing_calls": 1400
+      },
+      "policies": [
+        {
+          "mode": "full",
+          "successes": 99,
+          "episodes": 100,
+          "success_rate": 0.99,
+          "infer_ms": 122.52281977999999,
+          "denoise_ms": 55.93379318237305,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 49,
+              "episodes": 50
+            },
+            "libero_goal": {
+              "successes": 50,
+              "episodes": 50
+            }
+          },
+          "closed_loop_shallow_ratio": 0.0
+        },
+        {
+          "mode": "content60",
+          "successes": 99,
+          "episodes": 100,
+          "success_rate": 0.99,
+          "infer_ms": 99.30478179999999,
+          "denoise_ms": 33.125708742141725,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 49,
+              "episodes": 50
+            },
+            "libero_goal": {
+              "successes": 50,
+              "episodes": 50
+            }
+          },
+          "closed_loop_shallow_ratio": 0.5618957345971564
+        },
+        {
+          "mode": "timestep60",
+          "successes": 99,
+          "episodes": 100,
+          "success_rate": 0.99,
+          "infer_ms": 99.97817449499999,
+          "denoise_ms": 32.73884157180786,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 49,
+              "episodes": 50
+            },
+            "libero_goal": {
+              "successes": 50,
+              "episodes": 50
+            }
+          },
+          "closed_loop_shallow_ratio": 0.6
+        },
+        {
+          "mode": "meta60",
+          "successes": 99,
+          "episodes": 100,
+          "success_rate": 0.99,
+          "infer_ms": 99.56264891999999,
+          "denoise_ms": 32.61920247077942,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 49,
+              "episodes": 50
+            },
+            "libero_goal": {
+              "successes": 50,
+              "episodes": 50
+            }
+          },
+          "closed_loop_shallow_ratio": 0.6168241965973535
+        },
+        {
+          "mode": "random60",
+          "successes": 99,
+          "episodes": 100,
+          "success_rate": 0.99,
+          "infer_ms": 95.10639039,
+          "denoise_ms": 28.4481587600708,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 49,
+              "episodes": 50
+            },
+            "libero_goal": {
+              "successes": 50,
+              "episodes": 50
+            }
+          },
+          "closed_loop_shallow_ratio": 0.6151140684410646
+        },
+        {
+          "mode": "content50",
+          "successes": 99,
+          "episodes": 100,
+          "success_rate": 0.99,
+          "infer_ms": 103.45674215,
+          "denoise_ms": 36.99362819671631,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 49,
+              "episodes": 50
+            },
+            "libero_goal": {
+              "successes": 50,
+              "episodes": 50
+            }
+          },
+          "closed_loop_shallow_ratio": 0.4554296506137866
+        },
+        {
+          "mode": "random50",
+          "successes": 99,
+          "episodes": 100,
+          "success_rate": 0.99,
+          "infer_ms": 98.8461819,
+          "denoise_ms": 33.09267972946167,
+          "per_suite": {
+            "libero_spatial": {
+              "successes": 49,
+              "episodes": 50
+            },
+            "libero_goal": {
+              "successes": 50,
+              "episodes": 50
+            }
+          },
+          "closed_loop_shallow_ratio": 0.5208728652751423
+        }
+      ],
+      "reported_audits": {
+        "final_audit_passed": true,
+        "actual_compute_matched": false
+      },
+      "source_ids": [
+        "input_ablation",
+        "input_ablation_interpretation"
+      ],
+      "limitations": [
+        "Only Spatial0 and Goal0, one evaluation seed, and the same 100 paired initial states per policy.",
+        "All policies succeeded on the same 99 of 100 initial states; the observed success difference is zero.",
+        "Actual shallow ratios differ. Equal-compute content-routing benefit was not established.",
+        "A paired bootstrap interval of [0,0] is mechanically degenerate for identical outcomes and is not evidence of equivalence.",
+        "Closed-loop shallow ratios and separate timing replay-input ratios have different denominators; do not interchange them."
+      ]
+    },
+    {
+      "id": "plus_timing_continuation",
+      "title": "Authorized exploratory LIBERO-Plus timing continuation",
+      "kind": "timing_only",
+      "scope": {
+        "benchmark": "LIBERO-Plus subset",
+        "suites": [
+          "libero_spatial",
+          "libero_goal"
+        ],
+        "base_task_count": 2,
+        "input_observations_per_suite": 10,
+        "formal_repeats_per_observation": 10
+      },
+      "counts": {
+        "episodes": 0,
+        "new_episodes": 0,
+        "reused_episodes": 0,
+        "parent_episodes": 1497,
+        "timing_calls": 600
+      },
+      "timings": [
+        {
+          "mode": "full",
+          "suite": "libero_spatial",
+          "calls": 100,
+          "infer_ms": 126.40315931,
+          "denoise_ms": 56.05775367736816,
+          "timing_shallow_ratio": 0.0,
+          "formal_graphs_stable": true
+        },
+        {
+          "mode": "full",
+          "suite": "libero_goal",
+          "calls": 100,
+          "infer_ms": 125.42537044000001,
+          "denoise_ms": 56.09892860412597,
+          "timing_shallow_ratio": 0.0,
+          "formal_graphs_stable": true
+        },
+        {
+          "mode": "content60",
+          "suite": "libero_spatial",
+          "calls": 100,
+          "infer_ms": 107.90608456,
+          "denoise_ms": 36.302346267700194,
+          "timing_shallow_ratio": 0.56,
+          "formal_graphs_stable": true
+        },
+        {
+          "mode": "content60",
+          "suite": "libero_goal",
+          "calls": 100,
+          "infer_ms": 98.60047374999996,
+          "denoise_ms": 29.67356424331665,
+          "timing_shallow_ratio": 0.67,
+          "formal_graphs_stable": true
+        },
+        {
+          "mode": "matched_step_mlp60",
+          "suite": "libero_spatial",
+          "calls": 100,
+          "infer_ms": 110.83599941000003,
+          "denoise_ms": 41.78244625091553,
+          "timing_shallow_ratio": 0.414,
+          "formal_graphs_stable": true
+        },
+        {
+          "mode": "matched_step_mlp60",
+          "suite": "libero_goal",
+          "calls": 100,
+          "infer_ms": 98.10991668000001,
+          "denoise_ms": 30.071777172088623,
+          "timing_shallow_ratio": 0.659,
+          "formal_graphs_stable": true
+        }
+      ],
+      "reported_audits": {
+        "timing_audit_passed": true,
+        "parent_original_protocol_complete": false,
+        "parent_pairing_passed": false,
+        "actual_compute_matched": false
+      },
+      "parent_background": {
+        "scope": "Two original tasks: Spatial0 (231 variants) and Goal0 (268 variants); not all LIBERO-Plus.",
+        "episodes": 1497,
+        "timing_calls": 0,
+        "policies": [
+          {
+            "mode": "full",
+            "successes": 381,
+            "episodes": 499,
+            "success_rate": 0.7635270541082164,
+            "closed_loop_shallow_ratio": 0.0
+          },
+          {
+            "mode": "content60",
+            "successes": 360,
+            "episodes": 499,
+            "success_rate": 0.7214428857715431,
+            "closed_loop_shallow_ratio": 0.5534681785677802
+          },
+          {
+            "mode": "matched_step_mlp60",
+            "successes": 365,
+            "episodes": 499,
+            "success_rate": 0.7314629258517034,
+            "closed_loop_shallow_ratio": 0.5965711361310133
+          }
+        ]
+      },
+      "source_ids": [
+        "plus_timing",
+        "plus_timing_audit",
+        "plus_parent"
+      ],
+      "limitations": [
+        "This timing-only continuation contains zero new closed-loop episodes. Parent scores are context, not new results.",
+        "The parent RGB observation-pairing audit failed. These timing results do not repair or complete the original protocol.",
+        "Only two original tasks and their variants were evaluated; no whole-LIBERO-Plus claim.",
+        "The three policies use an identical frozen input pool within each suite; all warmup and compilation calls are excluded.",
+        "Actual shallow ratios differ, particularly for Spatial. This is not an equal-compute policy comparison.",
+        "Ten unique observations per suite are repeated ten times; one hundred timing calls are not one hundred independent scenes."
+      ]
+    }
+  ]
+}

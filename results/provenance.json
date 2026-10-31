@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "public_dataset": "summary.json",
+  "public_dataset_sha256": "b560c19d55c4e7f458967f9ffa96626c5e2c887d8a456e3f29099093215ce85b",
+  "verification_scope": "The included aggregate file can be integrity-checked and its tables/plots regenerated. Original episode files, GPU timing traces, model checkpoints, and local audit bundles are not included. Source hashes identify archived local records but cannot independently verify those absent originals or reproduce policy evaluation.",
+  "sources": [
+    {
+      "id": "fixed40",
+      "archived_relative_path": "outputs/ig_four_suite_20261021/comparison.json",
+      "sha256": "09afc2f0af37d990ab9d9b693865c843de687f22c5e6e9d2e8fd350ed25dd515",
+      "included_in_public_repository": false
+    },
+    {
+      "id": "fixed40_audit",
+      "archived_relative_path": "outputs/ig_four_suite_20261021/final_audit.json",
+      "sha256": "e0f22c8a614274f512ade2c9f7e8dab79d135f3913e1fa348effab0689c34d6a",
+      "included_in_public_repository": false
+    },
+    {
+      "id": "dynamic40",
+      "archived_relative_path": "outputs/ig_task1_40_20261023_v2/summary.json",
+      "sha256": "2692b9fc9ec39ef807f32c5ed5c95e197864b270f70f38ebf7af465d80831ba4",
+      "included_in_public_repository": false
+    },
+    {
+      "id": "dynamic40_audit",
+      "archived_relative_path": "outputs/ig_task1_40_20261023_v2/final_audit.json",
+      "sha256": "27456faa0ee8de3f00496ba9343fb88c6ac84d05a1159b25c1ebff4cbd3c413a",
+      "included_in_public_repository": false
+    },
+    {
+      "id": "input_ablation",
+      "archived_relative_path": "outputs/ig_task4_ablation_20261025_v1/summary.json",
+      "sha256": "183955efbd18e1f31f95b44fb7351673ddc23dd30ce632a375890a53dd4a2a95",
+      "included_in_public_repository": false
+    },
+    {
+      "id": "input_ablation_interpretation",
+      "archived_relative_path": "outputs/ig_task4_ablation_20261025_v1/final_interpretation.json",
+      "sha256": "193e6c34e7620c7ba9bbfc1e14da5dfa5c2664be42fee61101446ca13b206b25",
+      "included_in_public_repository": false
+    },
+    {
+      "id": "plus_timing",
+      "archived_relative_path": "outputs/ig_libero_plus_timing_20261027_continue/timing_summary.json",
+      "sha256": "c5a16629efe1760ac62a48a8c0bddaaf4addbd59f5f7f9449c667b7fd363722d",
+      "included_in_public_repository": false
+    },
+    {
+      "id": "plus_timing_audit",
+      "archived_relative_path": "outputs/ig_libero_plus_timing_20261027_continue/timing_audit.json",
+      "sha256": "365ab005ffda4aa986348a1d75b0d1731084c5c362561dc224ffe76d2f2dde8b",
+      "included_in_public_repository": false
+    },
+    {
+      "id": "plus_parent",
+      "archived_relative_path": "outputs/ig_libero_plus_task0_20261027_v1/summary.json",
+      "sha256": "676c9a5d6b564aa3e43b4c00ba036cc90e0856842a1d0dad122026583abd620b",
+      "included_in_public_repository": false
+    }
+  ],
+  "extraction": "Explicit numeric and categorical field allowlist. No raw observations, per-episode scored dictionaries, process logs, server addresses, credentials, or absolute machine paths are copied."
+}
