@@ -1,0 +1,10 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.svg text eol=lf
+*.png binary
+# Preserve byte-level provenance when checking out on another OS.
+results/*.json -text
+routing/risk_mlp.py -text

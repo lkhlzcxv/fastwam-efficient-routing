@@ -1,0 +1,41 @@
+# Python / editor files
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+
+# Credentials and machine-local settings
+.env
+.env.*
+*.pem
+*.key
+*ed25519*
+*id_rsa*
+*known_hosts*
+.ssh/
+
+# Model/data archives and experiment infrastructure
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npz
+*.npy
+*.zip
+*.tar*
+*.log
+checkpoints/
+raw_data/
+raw_observations/
+work/
+outputs/
+RESUME_STATE.json
+heartbeat_last_report.json
+
+# Local release metadata
+release_check.local.json
