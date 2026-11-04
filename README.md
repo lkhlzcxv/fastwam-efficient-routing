@@ -1,4 +1,4 @@
-# FastWAM Efficient Routing
+# FastWAM inference acceleration
 
 **具身策略模型的浅层蒸馏、动态选路与可复核评测**
 
