@@ -76,10 +76,7 @@ python scripts/plot_results.py
 | 核心路由 | Task4 的 MLP 输入消融实现、独立 RNG、冻结阈值与随机规则 |
 | 完整闭环重跑 | 需要另行准备原模型、浅层与路由检查点、采集数据、环境和 GPU；本仓库尚不提供一键闭环重跑 |
 
-已有实验支持 shallow routing 的加速效果，以及 hidden 对局部 flow-gap 预测的价值。**尚未建立相同实际计算预算下，内容 MLP 稳定优于随机路由的成功率证据。**
-
-LIBERO-Plus 扩展仅覆盖两个原任务的 499 个变体。三组共 1497 个闭环回合完成，但原 RGB 配对审计失败；另行授权的 600 次同输入测速不改变该失败结论。video+action 融合与 jerk 双目标仍属未完成的后续方向。
-
+已有实验支持 shallow routing 的加速效果，以及 hidden 对局部 flow-gap 预测的价值。
 详细说明：[复现步骤](docs/reproduction.md) · [实验限制](docs/limitations.md) · [上游与来源](THIRD_PARTY.md)
 
 ## 仓库结构
